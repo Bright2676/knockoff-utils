@@ -1,7 +1,9 @@
-﻿using Exiled.Events.EventArgs.Player;
+﻿using Exiled.API.Enums;
+using Exiled.API.Features;
+using Exiled.Events.EventArgs.Player;
 using Exiled.Permissions.Extensions;
 
-namespace CactusPatchExample
+namespace KnockoffUtils
 {
     internal sealed class ServerHandler
     {

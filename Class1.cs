@@ -1,9 +1,11 @@
-﻿global using Exiled.API.Enums;
-global using Exiled.API.Features;
+﻿using Exiled.API.Enums;
+using Exiled.API.Features;
+using Exiled.CustomRoles.Events;
 using Exiled.Events.EventArgs.Player;
 using Exiled.Events.Handlers;
+using InventorySystem.Items.Usables.Scp330;
 
-namespace CactusPatchExample
+namespace KnockoffUtils
 {
     public class Class1 : Plugin<Config>
     {
@@ -17,7 +19,9 @@ namespace CactusPatchExample
         {
             Instance = this;
             RegisterEvents();
-            Log.Info("im alive");
+
+            Log.Info("Ready!");
+
             base.OnEnabled();
         }
 
@@ -37,6 +41,8 @@ namespace CactusPatchExample
 
             Exiled.Events.Handlers.Player.Verified += ServerHandler.Verified;
             Exiled.Events.Handlers.Player.TriggeringTesla += PlayerHandler.OnTriggeringTesla;
+            Exiled.Events.Handlers.Player.Spawned += PlayerHandler.OnSpawned;
+            Scp330.InteractingScp330 += PlayerHandler.OnInteractingScp330;
         }
 
         private void UnregisterEvents()
@@ -46,6 +52,8 @@ namespace CactusPatchExample
 
             Exiled.Events.Handlers.Player.Verified -= ServerHandler.Verified;
             Exiled.Events.Handlers.Player.TriggeringTesla -= PlayerHandler.OnTriggeringTesla;
+            Exiled.Events.Handlers.Player.Spawned -= PlayerHandler.OnSpawned;
+            Scp330.InteractingScp330 -= PlayerHandler.OnInteractingScp330;
         }
 
     }
