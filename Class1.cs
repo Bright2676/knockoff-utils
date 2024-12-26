@@ -1,9 +1,7 @@
 ﻿using Exiled.API.Enums;
 using Exiled.API.Features;
-using Exiled.CustomRoles.Events;
-using Exiled.Events.EventArgs.Player;
+using KnockoffUtils.EventHandlers;
 using Exiled.Events.Handlers;
-using InventorySystem.Items.Usables.Scp330;
 
 namespace KnockoffUtils
 {
